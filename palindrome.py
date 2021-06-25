@@ -7,9 +7,16 @@ def is_palindrome(value: str) -> bool:
     """
     upperValue = value.upper()
     reverseStr = upperValue[::-1]
-    if upperValue == reverseStr:
+    newReverse = ''
+    newUpper = ''
+    for i in reverseStr:
+      if i != ' ':
+        newReverse += i
+    for i in upperValue:
+      if i != ' ':
+        newUpper += i
+    if newUpper == newReverse:
         return True
     else:
-        return False  # remove pass statement and implement me
-
-print(is_palindrome('radar'))
+        return False  # remove pass statement and 
+print(is_palindrome('Do geese see God'))

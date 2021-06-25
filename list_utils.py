@@ -31,8 +31,14 @@ def sort_by_commit_count(list_in: List) -> List:
     :param list_in: A list where each entry is a list containing a name and the commit count corresponding to a user
     :return: The same list sorted in ascending order based on the commit count
     """
-    list_in.sort()
-    return list_in  # remove pass statement and implement me
+    list_in.sort(key = lambda x: x[1])
+    return list_in
+
+print(sort_by_commit_count([['john', 15],
+     ['jane', 12],
+     ['dave', 10]]))
+    
+    
 
 
 def gen_list_of_nums(n: int) -> List[int]:
@@ -57,15 +63,18 @@ def half_list(list_in: List, half: int) -> List:
     If the length of list_in is an odd number, round the half value up (hint: math.ceil()).
     :return: A list.
     """
-    if len(list_in) % 2 == 0:
-        middle = len(list_in) / 2
-    else:
-        middle = Math.ceil(len(list_in) / 2)
+    middle = len(list_in) // 2
+    print(middle)
     if half == 1:
-        return list_in[0, middle]
+        if len(list_in) % 2 == 0:
+            return list_in[0: middle]
+        else:
+            return list_in[0: middle + 1]
     else:
-        return list_in[middle, len(list_in)]
+      return list_in[middle:]
 
+print(half_list([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], 2))
+    
           # remove pass statement and implement me
 
 
@@ -75,7 +84,15 @@ def remove_odds(list_in: List[int]) -> None:
 
     :return: None
     """
-    list_in = [x for x in list_in if x % 2 == 0]
+    indexOfOdds = []
+    for i in list_in:
+        if i % 2 != 0:
+            indexOfOdds.append(i)
+            print(indexOfOdds)
+    for i in indexOfOdds:
+        list_in.remove(i)
+    return list_in
+    
       #remove pass statement and implement me
 
 
@@ -85,7 +102,15 @@ def remove_evens(list_in: List[int]) -> None:
 
     :return: None
     """
-    list_in = [x for x in list_in if x % 2 != 0]  # remove pass statement and implement me
+    indexOfEvens = []
+    for i in list_in:
+        if i % 2 == 0:
+            indexOfEvens.append(i)
+        print(indexOfEvens)
+    for i in indexOfEvens:
+        list_in.remove(i)
+    return list_in
+     # remove pass statement and implement me
 
 
 def concatenate_lists(list_a: List, list_b: List) -> List:
