@@ -5,4 +5,18 @@ def is_palindrome(value: str) -> bool:
     :param value: A string
     :return: A boolean
     """
-    pass  # remove pass statement and implement me
+    upperValue = value.upper()
+    reverseStr = upperValue[::-1]
+    newReverse = ''
+    newUpper = ''
+    for i in reverseStr:
+      if i != ' ':
+        newReverse += i
+    for i in upperValue:
+      if i != ' ':
+        newUpper += i
+    if newUpper == newReverse:
+        return True
+    else:
+        return False  # remove pass statement and 
+print(is_palindrome('Do geese see God'))
