@@ -5,4 +5,11 @@ def is_palindrome(value: str) -> bool:
     :param value: A string
     :return: A boolean
     """
-    pass  # remove pass statement and implement me
+    upperValue = value.upper()
+    reverseStr = upperValue[::-1]
+    if upperValue == reverseStr:
+        return True
+    else:
+        return False  # remove pass statement and implement me
+
+print(is_palindrome('radar'))
